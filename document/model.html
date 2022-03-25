@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module model</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>model</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/matias/Dropbox/cursos/python_diplomatura/03_ex_python_intermedio/u0_tp_final/model.py">/home/matias/Dropbox/cursos/python_diplomatura/03_ex_python_intermedio/u0_tp_final/model.py</a></font></td></tr></table>
+    <p><tt>Modulos&nbsp;a&nbsp;utilizar</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="sqlite3.html">sqlite3</a><br>
+</td><td width="25%" valign=top><a href="re.html">re</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="model.html#BaseDeDatos">BaseDeDatos</a>
+</font></dt><dt><font face="helvetica, arial"><a href="model.html#MostrarAlertas">MostrarAlertas</a>
+</font></dt><dt><font face="helvetica, arial"><a href="model.html#ValidarDatos">ValidarDatos</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="BaseDeDatos">class <strong>BaseDeDatos</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Operaciones&nbsp;de&nbsp;CRUD&nbsp;para&nbsp;el&nbsp;manejo&nbsp;de&nbsp;la&nbsp;base&nbsp;de&nbsp;datos&nbsp;SQLite3<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="BaseDeDatos-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>Constructor&nbsp;de&nbsp;la&nbsp;clase.&nbsp;La&nbsp;aplicación&nbsp;utiliza&nbsp;como&nbsp;motor&nbsp;de&nbsp;base&nbsp;de&nbsp;datos&nbsp;SQLite3</tt></dd></dl>
+
+<dl><dt><a name="BaseDeDatos-actualizar_registro"><strong>actualizar_registro</strong></a>(self, nombre, apellido, empresa, telefono, email, direccion, nacimiento, dni)</dt><dd><tt>Actualiza&nbsp;registros&nbsp;de&nbsp;la&nbsp;tabla&nbsp;'personal'&nbsp;en&nbsp;la&nbsp;base&nbsp;de&nbsp;datos&nbsp;'personal_v2'.&nbsp;Previamente&nbsp;valida&nbsp;que&nbsp;el&nbsp;campo&nbsp;DNI&nbsp;realmente&nbsp;se&nbsp;encuentre&nbsp;almacenado&nbsp;en&nbsp;la&nbsp;base&nbsp;de&nbsp;datos&nbsp;(en&nbsp;caso&nbsp;de&nbsp;no&nbsp;encontrarlo&nbsp;avisa&nbsp;al&nbsp;usuario&nbsp;mediante&nbsp;ua&nbsp;alerta)</tt></dd></dl>
+
+<dl><dt><a name="BaseDeDatos-borrar_registro"><strong>borrar_registro</strong></a>(self, dni)</dt><dd><tt>Elimina&nbsp;registros&nbsp;de&nbsp;la&nbsp;tabla&nbsp;'personal'&nbsp;en&nbsp;la&nbsp;base&nbsp;de&nbsp;datos&nbsp;'personal_v2'.&nbsp;Previamente&nbsp;realiza&nbsp;una&nbsp;validacion&nbsp;para&nbsp;comprobar&nbsp;que&nbsp;el&nbsp;DNI&nbsp;ingresado&nbsp;se&nbsp;encuentre&nbsp;en&nbsp;la&nbsp;base&nbsp;de&nbsp;datos</tt></dd></dl>
+
+<dl><dt><a name="BaseDeDatos-buscar_registro"><strong>buscar_registro</strong></a>(self, dni)</dt><dd><tt>Busca&nbsp;registros&nbsp;de&nbsp;la&nbsp;tabla&nbsp;'personal'&nbsp;de&nbsp;la&nbsp;base&nbsp;de&nbsp;datos&nbsp;'personal_v2'.&nbsp;Este&nbsp;metodo&nbsp;tambien&nbsp;es&nbsp;utilizado&nbsp;en&nbsp;las&nbsp;operaciones&nbsp;de&nbsp;borrar&nbsp;y&nbsp;actualizar&nbsp;para&nbsp;traer&nbsp;los&nbsp;daots&nbsp;de&nbsp;la&nbsp;base&nbsp;de&nbsp;datos&nbsp;a&nbsp;la&nbsp;aplicacion</tt></dd></dl>
+
+<dl><dt><a name="BaseDeDatos-conexion_base_datos"><strong>conexion_base_datos</strong></a>(self)</dt><dd><tt>Conexión&nbsp;con&nbsp;la&nbsp;base&nbsp;de&nbsp;datos.&nbsp;Metodo&nbsp;reutilizable&nbsp;para&nbsp;realizar&nbsp;la&nbsp;conexion</tt></dd></dl>
+
+<dl><dt><a name="BaseDeDatos-insertar_registro"><strong>insertar_registro</strong></a>(self, dni, nombre, apellido, empresa, telefono, email, direccion, nacimiento)</dt><dd><tt>Inserta&nbsp;nuevos&nbsp;registros&nbsp;en&nbsp;la&nbsp;tabla&nbsp;personal&nbsp;en&nbsp;la&nbsp;base&nbsp;de&nbsp;datos&nbsp;personal_v2.&nbsp;Para&nbsp;que&nbsp;se&nbsp;puedan&nbsp;realizar&nbsp;el&nbsp;alta&nbsp;de&nbsp;datos,&nbsp;todos&nbsp;los&nbsp;campos&nbsp;deben&nbsp;estar&nbsp;completos&nbsp;(se&nbsp;realiza&nbsp;esta&nbsp;validacion)&nbsp;y&nbsp;correctos&nbsp;(se&nbsp;valida&nbsp;mediante&nbsp;regex)</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="MostrarAlertas">class <strong>MostrarAlertas</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Clase&nbsp;para&nbsp;mostrar&nbsp;los&nbsp;errores&nbsp;o&nbsp;la&nbsp;informacion&nbsp;al&nbsp;usuario&nbsp;mediante&nbsp;cuadros&nbsp;de&nbsp;dialogo&nbsp;durante&nbsp;la&nbsp;ejecucion&nbsp;de&nbsp;la&nbsp;aplicacion<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="MostrarAlertas-mensaje_error"><strong>mensaje_error</strong></a>(self, desc_error)</dt><dd><tt>Muestra&nbsp;mensaje&nbsp;de&nbsp;error</tt></dd></dl>
+
+<dl><dt><a name="MostrarAlertas-mensaje_ok"><strong>mensaje_ok</strong></a>(self, desc_mensaje)</dt><dd><tt>Muestra&nbsp;mensaje&nbsp;de&nbsp;informacion</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ValidarDatos">class <strong>ValidarDatos</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Metodos&nbsp;para&nbsp;realizar&nbsp;la&nbsp;validacion&nbsp;de&nbsp;los&nbsp;datos,&nbsp;en&nbsp;caso&nbsp;de&nbsp;que&nbsp;alguno&nbsp;no&nbsp;cumpla&nbsp;con&nbsp;el&nbsp;formato&nbsp;especificado,&nbsp;no&nbsp;se&nbsp;realizara&nbsp;la&nbsp;consulta<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="ValidarDatos-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>Instancia&nbsp;la&nbsp;clase&nbsp;<a href="#MostrarAlertas">MostrarAlertas</a>,&nbsp;la&nbsp;cual&nbsp;utiliza&nbsp;para&nbsp;enviar&nbsp;al&nbsp;usuario&nbsp;mensajes&nbsp;mediante&nbsp;cuadros&nbsp;de&nbsp;dialogo</tt></dd></dl>
+
+<dl><dt><a name="ValidarDatos-validar_dni"><strong>validar_dni</strong></a>(self, dni)</dt><dd><tt>Validacion&nbsp;mediante&nbsp;expresiones&nbsp;regulares&nbsp;del&nbsp;campo&nbsp;DNI</tt></dd></dl>
+
+<dl><dt><a name="ValidarDatos-validar_email"><strong>validar_email</strong></a>(self, email)</dt><dd><tt>Validacion&nbsp;mediante&nbsp;expresiones&nbsp;regulares&nbsp;del&nbsp;campo&nbsp;email</tt></dd></dl>
+
+<dl><dt><a name="ValidarDatos-validar_nacimiento"><strong>validar_nacimiento</strong></a>(self, nacimiento)</dt><dd><tt>Validacion&nbsp;mediante&nbsp;expresiones&nbsp;regulares&nbsp;del&nbsp;campo&nbsp;nacimiento&nbsp;(fecha)</tt></dd></dl>
+
+<dl><dt><a name="ValidarDatos-validar_telefono"><strong>validar_telefono</strong></a>(self, telefono)</dt><dd><tt>Validacion&nbsp;mediante&nbsp;expresiones&nbsp;regulares&nbsp;del&nbsp;campo&nbsp;telefono</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>
